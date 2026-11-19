@@ -27,19 +27,15 @@
 
 ## 安装
 
-**从 npm**（发布到 registry 后可用）：
-
 ```bash
 npm install -g mcp-rg-search
 ```
 
-**从 GitHub 仓库**（当前即可用）：
+也可以直接从 GitHub 仓库安装（走 npm 的 **git spec**，**需要本机装有 git**）：
 
 ```bash
 npm install -g github:Fastunbeaten/mcp-rg-search
 ```
-
-> 第二条走 npm 的 **git spec**（直接从 GitHub 仓库安装），**需要本机装有 git**。包名 `mcp-rg-search` 已在 npm 保留。
 
 或者直接从一份检出运行：
 

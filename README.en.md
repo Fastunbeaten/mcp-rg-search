@@ -27,19 +27,15 @@ It also adds what raw `rg` doesn't do: non-UTF-8 encoding support (`gb18030`, `b
 
 ## Install
 
-**From npm** (available once the package reaches the registry):
-
 ```bash
 npm install -g mcp-rg-search
 ```
 
-**From the GitHub repository** (works today):
+You can also install straight from the GitHub repository (npm's **git spec**, **requires git** on your machine):
 
 ```bash
 npm install -g github:Fastunbeaten/mcp-rg-search
 ```
-
-> The second form uses npm's **git spec** (it installs straight from the GitHub repository) and **requires git on your machine**. The name `mcp-rg-search` is reserved on npm.
 
 Or run it from a checkout:
 
