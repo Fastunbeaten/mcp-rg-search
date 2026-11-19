@@ -1,0 +1,17 @@
+{
+  "name": "mcp-rg-search",
+  "version": "0.1.0",
+  "description": "Read-only MCP server for content search, wrapping ripgrep with explicit limits, degradation semantics and a stable response contract.",
+  "type": "module",
+  "bin": { "mcp-rg-search": "index.mjs" },
+  "main": "index.mjs",
+  "files": ["index.mjs", "README.md", "README.en.md", "LICENSE"],
+  "engines": { "node": ">=20" },
+  "keywords": ["mcp", "ripgrep", "search", "grep", "code-search", "read-only"],
+  "license": "MIT",
+  "author": "Fastunbeaten",
+  "repository": { "type": "git", "url": "git+https://github.com/Fastunbeaten/mcp-rg-search.git" },
+  "bugs": { "url": "https://github.com/Fastunbeaten/mcp-rg-search/issues" },
+  "homepage": "https://github.com/Fastunbeaten/mcp-rg-search#readme",
+  "scripts": { "test": "node test/search.test.mjs" }
+}
