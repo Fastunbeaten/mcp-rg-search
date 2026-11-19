@@ -6,7 +6,7 @@
 
 > **运行要求**：Node.js ≥ 20，且能找到 `rg`（ripgrep）—— 在 `PATH` 上，或用 `RG_PATH` 显式指定（`RG_PATH` **优先于** `PATH`）。
 > **零第三方依赖** —— MCP 协议直接基于 stdio JSON-RPC 实现。
-> **平台范围**：面向 **Windows + DSH** 验证；其它平台未验证。
+> **平台范围**：面向 **Windows** 验证；其它平台未验证。
 
 ---
 
@@ -47,21 +47,6 @@ node /path/to/mcp-rg-search/index.mjs
 
 ### 客户端配置
 
-**DSH**（`cordis.patch.yml`）：
-
-```yaml
-- id: mcp-rg-search
-  name: '@deepseek-ai/dsh-mcp-client'
-  config:
-    serverName: rg-search
-    transport: stdio
-    command: node
-    args:
-      - '/absolute/path/to/mcp-rg-search/index.mjs'
-```
-
-**通用 MCP 客户端**：
-
 ```json
 {
   "mcpServers": {
@@ -75,13 +60,14 @@ node /path/to/mcp-rg-search/index.mjs
 
 全局安装（`npm install -g`）之后，入口可以直接写可执行名，不必再指到 `index.mjs`：
 
-```yaml
-- id: mcp-rg-search
-  name: '@deepseek-ai/dsh-mcp-client'
-  config:
-    serverName: rg-search
-    transport: stdio
-    command: mcp-rg-search
+```json
+{
+  "mcpServers": {
+    "rg-search": {
+      "command": "mcp-rg-search"
+    }
+  }
+}
 ```
 
 ---
@@ -231,6 +217,12 @@ node test/search.test.mjs
 ```
 
 需要本地已安装 `rg`（ripgrep）。测试会自行创建临时样本文件，跑完自动清理。
+
+---
+
+## 项目性质
+
+个人项目，按需维护，不承诺响应时限与长期支持。适合直接使用或 fork 自建，不建议作为关键依赖。
 
 ---
 

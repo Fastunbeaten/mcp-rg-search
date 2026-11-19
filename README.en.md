@@ -6,7 +6,7 @@ It exposes **one tool** — `search_content` — and focuses on what an AI agent
 
 > **Requirements**: Node.js ≥ 20, and a usable `rg` (ripgrep) — on `PATH`, or pointed to by `RG_PATH` (which **takes precedence over** `PATH`).
 > **Zero third-party dependencies** — the MCP protocol is implemented directly over stdio JSON-RPC.
-> **Platform scope**: verified on **Windows + DSH**; other platforms are untested.
+> **Platform scope**: verified on **Windows**; other platforms are untested.
 
 ---
 
@@ -47,21 +47,6 @@ The server speaks MCP over **stdio** (protocol version `2024-11-05`); point your
 
 ### Client configuration
 
-**DSH** (`cordis.patch.yml`):
-
-```yaml
-- id: mcp-rg-search
-  name: '@deepseek-ai/dsh-mcp-client'
-  config:
-    serverName: rg-search
-    transport: stdio
-    command: node
-    args:
-      - '/absolute/path/to/mcp-rg-search/index.mjs'
-```
-
-**Generic MCP client**:
-
 ```json
 {
   "mcpServers": {
@@ -75,13 +60,14 @@ The server speaks MCP over **stdio** (protocol version `2024-11-05`); point your
 
 After a global install (`npm install -g`) the entry point can be the executable name instead of the path to `index.mjs`:
 
-```yaml
-- id: mcp-rg-search
-  name: '@deepseek-ai/dsh-mcp-client'
-  config:
-    serverName: rg-search
-    transport: stdio
-    command: mcp-rg-search
+```json
+{
+  "mcpServers": {
+    "rg-search": {
+      "command": "mcp-rg-search"
+    }
+  }
+}
 ```
 
 ---
@@ -231,6 +217,12 @@ node test/search.test.mjs
 ```
 
 Requires `rg` (ripgrep) on your machine. The tests create their own fixture files and clean up after themselves.
+
+---
+
+## Project status
+
+A personal project, maintained on an as-needed basis. No commitment to response times or long-term support. Suitable for direct use or forking; not recommended as a critical dependency.
 
 ---
 
