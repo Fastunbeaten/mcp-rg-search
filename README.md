@@ -220,6 +220,20 @@ max_matches_per_file (60) > max_context (55) > max_columns (50) > scan_limit (40
 
 ---
 
+## 自测
+
+npm 包**不包含** `test/` 目录（保持包体积最小）。想跑自测请从仓库获取：
+
+```bash
+git clone https://github.com/Fastunbeaten/mcp-rg-search
+cd mcp-rg-search
+node test/search.test.mjs
+```
+
+需要本地已安装 `rg`（ripgrep）。测试会自行创建临时样本文件，跑完自动清理。
+
+---
+
 ## 许可
 
 MIT —— 见 [LICENSE](LICENSE)。

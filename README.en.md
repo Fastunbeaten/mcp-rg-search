@@ -220,6 +220,20 @@ The external file accepts three shapes: `["*.pem", …]`, `{ "patterns": [...] }
 
 ---
 
+## Testing
+
+The npm package does **not** ship the `test/` directory (to keep the package small). To run the test suite, get it from the repository:
+
+```bash
+git clone https://github.com/Fastunbeaten/mcp-rg-search
+cd mcp-rg-search
+node test/search.test.mjs
+```
+
+Requires `rg` (ripgrep) on your machine. The tests create their own fixture files and clean up after themselves.
+
+---
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
